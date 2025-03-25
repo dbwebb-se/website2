@@ -1,0 +1,107 @@
+---
+title: "Node" 
+description: No description.
+sidebar:
+    order: 150
+---
+
+import { Card } from '@astrojs/starlight/components';
+
+Installera Node.js och npm
+===================================
+
+
+
+Vi skall installera en miljö för JavaScript. Det handlar om Node.js och pakethanteraren npm. Vi ska installera LTS versionen av Node.js, vilket står för Long Term Support och är en stabil version.
+
+Miljön innebär att du kan köra JavaScript på din dator och du kan ta del av alla de program och paket som erbjuds via pakethanteraren npm.
+
+
+
+Installationsanvisningar
+-------------------------------
+
+Dessa anvisningar göller för Windows (WSL), Mac eller Linux
+
+En vanlig metod för att installera och hantera Nodejs är att använda "nvm" (node version manager). Vi börjar med att installera programmet cURL, som används för att hämta filer från internet via terminalen. Om det är installerat redan kan du skippa den installationen.
+
+Du kan se om det är installerat med följande kommando:
+```console
+$ which curl
+/usr/bin/curl
+```
+
+Om du inte ser en sökväg likt ovan kan du enkelt installera cURL:
+
+
+```console
+$ sudo apt install curl
+```
+
+Bra, nu kan vi hämta och installera nvm enligt nedan:
+
+```console
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+```
+
+Installera senaste LTS versionen:
+
+```console
+$ nvm install --lts
+# I skrivande stund är det v22.14.0
+```
+
+Nu kan du se de installerade versionerna med `$ nvm ls`.
+
+Vi kan även använda nvm för att skifta mellan installerade versioner men det är inget vi behöver göra i kursen.
+
+<Card title="Notera!" icon="seti:yml">
+  För att din miljö ska känna till det nyinstallerade `node` behöver du starta om terminalen.
+</Card>
+
+
+
+Verifiera att Node.js fungerar
+-------------------------------
+
+Du kan nu köra JavaScript med node. Pröva följande.
+
+```console
+$ node --help
+$ node --eval "console.log('Hello World')"
+Hello World
+```
+
+Du kan också köra node interaktivt och evaluera JavaScript rad för rad. Programmet visar att den är redo för inmatning med prompten `>`.
+
+
+```console
+$ node
+> console.log("Hej")
+Hej
+>
+```
+
+Du kan också låta nodejs köra JavaScript-program som finns i filer.
+
+```console
+$ echo "console.log('Hello')" > hello.js
+$ node hello.js
+Hello
+```
+
+
+
+Läs mer
+-------------------------------
+
+Du kan läsa mer om [Node.js på webbplatsen](https://nodejs.org/).
+
+Du kan läsa mer om [npm på webbplatsen](https://www.npmjs.com/). Där kan du också söka efter de paket som finns publicerade.
+
+
+
+Avslutningsvis
+----------------------------
+
+Bra, nu har du en fungerande installation av node och npm.
